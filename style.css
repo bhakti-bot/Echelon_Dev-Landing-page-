@@ -1,0 +1,545 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Default (Light Theme) */
+:root {
+ --bg-color: #120f1d;
+  --text-color: #e0e0e0;
+  --nav-bg: #1b1730;
+  --nav-text: #e0e0e0;
+  --accent: #a855f7;
+ 
+  --section-bg : white;
+}
+
+/* Dark Theme */
+body.dark-theme {
+
+    --bg-color: #ffffff;
+  --text-color: white;
+  --nav-bg: #111;
+  --nav-text: #ccc;
+  --accent: #ff69b4;
+}
+
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%; /* remove if you want square logo */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Add a slight glow or scale on hover */
+.logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+
+nav {
+  background-color: var(--nav-bg);
+}
+
+.nav-links a {
+  color: var(--nav-text);
+}
+
+.nav-links a:hover::after {
+  background-color: var(--accent);
+}
+
+button#themeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--nav-text);
+  transition: color 0.3s;
+}
+
+body {
+  background-color:var(#141313);
+  color:var( #f6f3f3);
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: var(rgba(20, 20, 20, 0.85));
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  align-items: center;
+  font-weight: 700;
+  color: #f781da;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo h1 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+     
+  padding-bottom: 5px; 
+
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;                 /* hidden by default */
+  height: 2px;              /* thickness of the underline */
+  background-color: #ff69b4; /* pink color */
+  transition: width 0.3s;   /* smooth animation */
+}
+
+/* Show underline on hover */
+.nav-links a:hover::after {
+  width: 100%;              /* underline grows full width */
+}
+
+.nav-links a:hover {
+  color: #f781da ;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #f781da;
+  cursor: pointer;
+}
+
+/* Toggle Button (top right) */
+.theme-toggle {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(text-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: #ff69b4;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("images/banner.jpg") center/contain no-repeat;
+  background-size: cover;
+
+  
+}
+
+/* Glow effect on headings */
+h1, h2, h3 {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+
+h1:hover, h2:hover, h3:hover {
+  color: #ff69b4; /* optional: change color */
+  text-shadow: 0 0 2px #ff69b4,
+               0 0 4px #ff69b4,
+               0 0 6px #ff69b4,
+               0 0 40px #ff69b4;
+}
+
+
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #f781da;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.hero p {
+  max-width: 700px;
+  
+  font-style: italic;
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+/* Button Glow */
+button, .btn {
+  background-color: #ff69b4; /* button color */
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Glow effect on hover */
+button:hover, .btn:hover {
+  box-shadow: 0 0 8px #ff69b4,
+              0 0 4px #ff69b4,
+              0 0 4px #ff69b4;
+  transform: scale(1.05); /* optional: slight pop effect */
+}
+
+
+.btn {
+  background: #f781da;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #f781da;
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  padding: 100px 10%;
+  background: #111;
+  text-align: center;
+}
+
+.about h2 {
+  color:#f781da;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #bbb;
+  line-height: 1.8;
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 10%;
+  background: #0a0a0a;
+  text-align: center;
+}
+
+.projects h2 {
+  color: #f781da;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #fb09e3;
+}
+
+.project-card h3 {
+  color: #f781da;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #aaa;
+}
+
+/* Team Section */
+.team {
+  padding: 100px 10%;
+  background: #111;
+  text-align: center;
+}
+
+.team h2 {
+  color: #f781da;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #e520c4fd;
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-card h3 {
+  color: #f781da;
+}
+
+.team-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Join Section */
+.join {
+  padding: 100px 10%;
+  background: #0a0a0a;
+  text-align: center;
+}
+
+.join h2 {
+  color: #f781da;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.join p {
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  padding: 30px 10%;
+  background: #111;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer p {
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #f781da;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color:#f781da;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    flex-direction: column;
+    background: #111;
+    width: 200px;
+    transition: 0.3s;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 10px #f781da; }
+  50% { text-shadow: 0 0 25px #f781da; }
+}
+/* Scroll Up Button */
+#scrollUpBtn {
+  display: none; /* hidden by default */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: #f781da;
+  color: #000;
+  border: none;
+  border-radius: 100%;
+  padding: 12px 16px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.8rem;     /* adjust size of the arrow */
+  line-height: 1;  
+  transition: background 0.3s, transform 0.3s;
+}
+
+#scrollUpBtn:hover {
+  background-color: #f781da;
+  transform: scale(1.1);
+}
+/* Fade Up (Blooming) Animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* start slightly lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* move to normal position */
+  }
+}
+
+/* Apply to hero text */
+.hero h1,
+.hero p,
+.hero .btn {
+  opacity: 0; /* start invisible */
+  animation: fadeUp 1s ease-out forwards; /* run animation once */
+}
+.hero h1,
+.hero p,
+.hero .btn {
+  opacity: 0; /* start invisible */
+  animation: fadeUp 1s ease-out forwards; /* run animation once */
+  animation-delay: 0.3s; /* all start together */
+}
+/* Fade-up animation */
+@keyframes fadeUpSection {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); /* start slightly lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* final position */
+  }
+}
+
+/* Hide all sections initially */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  
+  transition: all 0.5s ease-out;
+}
+
+/* Class to trigger animation */
+section.show {
+  animation: fadeUpSection 1s ease-out forwards;
+}
+
+
+
+
+
