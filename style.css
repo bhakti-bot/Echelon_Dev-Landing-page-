@@ -337,6 +337,15 @@ button:hover, .btn:hover {
 .project-card p {
   color: #aaa;
 }
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px; /* rounded corners */
+  transition: transform 0.3s ease;
+}
+
+
 
 /* Team Section */
 .team {
