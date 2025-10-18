@@ -396,10 +396,20 @@ button:hover, .btn:hover {
 }
 
 /* Join Section */
+.join-image{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  position: left;
+  border-radius: 50%;
+  margin-bottom: 20px; 
+}
+
 .join {
   padding: 100px 10%;
   background: #0a0a0a;
   text-align: center;
+
 }
 
 .join h2 {
